@@ -70,6 +70,7 @@
               id="phoneNumber"
               class="form-control mb-2"
               placeholder="Número de teléfono"
+              onkeydown="checkEnter(event)"
             />
             <button
               class="btn btn-primary mt-"
@@ -84,6 +85,12 @@
     </div>
 
     <script>
+      // Detectar la tecla Enter
+      function checkEnter(event) {
+        if (event.key === "Enter") {
+          sendMessage();
+        }
+      }
       let countries = [];
       let currentLanguage = "es";
 
